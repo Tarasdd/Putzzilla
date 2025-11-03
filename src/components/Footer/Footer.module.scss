@@ -1,0 +1,259 @@
+.footer {
+  background-color: #0d6b5f;
+  color: #fcee96;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 18rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ======== LOGO BLOCK ======== */
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: #fcee96;
+    font-size: 55px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+/* ======== CONTACT COLUMNS ======== */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 180px;
+
+  h4 {
+    color: #f9f6ee;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    font-size: 30px;
+    color: #f9f6ee;
+    text-decoration: none;
+    transition: 0.2s;
+    gap: 2rem;
+
+    &:hover {
+      color: #fcee96;
+    }
+  }
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.address {
+  margin: 2rem auto 0 auto;
+  font-size: 30px;
+  color: #fcee96;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ========================= */
+/* 💻 1200px — ноутбуки */
+@media (max-width: 1200px) {
+  .logoBlock .logo {
+    width: 180px;
+  }
+
+  .logoBlock h3 {
+    font-size: 48px;
+  }
+
+  .column h4 {
+    font-size: 30px;
+  }
+
+  .column a {
+    font-size: 22px;
+  }
+
+  .address {
+    font-size: 22px;
+  }
+}
+
+/* 💻 992px — планшети */
+@media (max-width: 992px) {
+  .container {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    align-items: center;
+  }
+
+  .contactItem {
+    justify-content: center;
+  }
+
+  .logoBlock {
+    margin-bottom: 2rem;
+
+    .logo {
+      width: 160px;
+    }
+
+    h3 {
+      font-size: 42px;
+    }
+  }
+
+  .column h4 {
+    font-size: 30px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hiddenTitle {
+    display: none;
+  }
+
+  .column a {
+    font-size: 22px;
+  }
+
+  .address {
+    font-size: 22px;
+  }
+}
+
+/* 📱 768px — великі телефони */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem;
+    // margin-top: 12rem;
+  }
+
+  .logoBlock .logo {
+    width: 150px;
+  }
+
+  .logoBlock h3 {
+    font-size: 38px;
+  }
+
+  .column h4 {
+    font-size: 26px;
+  }
+
+  
+
+  .column a {
+    font-size: 20px;
+  }
+
+  .contactItem svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .address {
+    font-size: 20px;
+  }
+}
+
+/* 📲 480px — телефони */
+@media (max-width: 480px) {
+  .footer {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    gap: 1.5rem;
+  }
+
+  .logoBlock .logo {
+    width: 130px;
+  }
+
+  .logoBlock h3 {
+    font-size: 34px;
+  }
+
+  .column h4 {
+    font-size: 22px;
+    margin-bottom: 1rem;
+  }
+
+  .column a {
+    font-size: 18px;
+  }
+
+  .contactItem svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .address {
+    font-size: 18px;
+  }
+}
+
+/* 📱 375px — малі телефони */
+@media (max-width: 375px) {
+  .footer {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .logoBlock .logo {
+    width: 110px;
+  }
+
+  .logoBlock h3 {
+    font-size: 28px;
+  }
+
+  .column h4 {
+    font-size: 20px;
+    margin-bottom: 0.8rem;
+  }
+
+  .column a {
+    font-size: 16px;
+  }
+
+  .contactItem svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+}

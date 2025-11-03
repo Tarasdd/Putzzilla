@@ -1,0 +1,248 @@
+.vip {
+  background: #fff;
+  color: #000;
+  padding: 6rem 12rem;
+  text-align: left;
+  transition: all 0.3s ease;
+
+  .discount {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 2.5rem;
+    color: #000;
+    transition: all 0.3s ease;
+
+    span {
+      color: #007a63;
+    }
+  }
+
+  .imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+
+    .image {
+      height: 600px;
+      width: auto;
+      border-radius: 10px;
+      z-index: 1;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .textBlock {
+    max-width: 850px;
+    text-align: left;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+
+    h3 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 25px;
+      text-align: center;
+      color: #000;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+  }
+
+  .primary,
+  .secondary {
+    border-radius: 9999px;
+    padding: 0.8rem 3rem;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .primary {
+    background: #007a63;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: #005c49;
+      transform: scale(1.05);
+    }
+  }
+
+  .secondary {
+    background: transparent;
+    border: 2px solid #007a63;
+    color: #007a63;
+
+    &:hover {
+      background: #007a63;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* 🔹 Плавна адаптація під різні розміри екранів */
+@media (max-width: 1440px) {
+  .vip {
+    padding: 5rem 8rem;
+
+    .title {
+      font-size: 50px;
+    }
+
+    .textBlock h3 {
+      font-size: 50px;
+    }
+
+    .textBlock p {
+      font-size: 22px;
+    }
+
+    .primary,
+    .secondary {
+      font-size: 26px;
+      padding: 0.7rem 2.5rem;
+    }
+
+    .imageContainer .image {
+      height: 500px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .vip {
+    padding: 4rem 5rem;
+
+    .discount {
+      font-size: 25px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .textBlock h3 {
+      font-size: 40px;
+    }
+
+    .textBlock p {
+      font-size: 20px;
+    }
+
+    .primary,
+    .secondary {
+      font-size: 22px;
+      padding: 0.7rem 2rem;
+    }
+
+    .imageContainer .image {
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .vip {
+    padding: 3rem 2rem;
+
+    .discount {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 32px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .imageContainer .image {
+      height: 300px;
+    }
+
+    .textBlock {
+      h3 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .buttons {
+      gap: 1.5rem;
+    }
+
+    .primary,
+    .secondary {
+      font-size: 20px;
+      padding: 0.6rem 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .vip {
+    padding: 2rem 1.2rem;
+
+    .discount {
+      font-size: 16px;
+    }
+
+    .title {
+      font-size: 26px;
+    }
+
+    .imageContainer .image {
+      height: 220px;
+    }
+
+    .textBlock {
+      h3 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .primary,
+    .secondary {
+      font-size: 18px;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+}

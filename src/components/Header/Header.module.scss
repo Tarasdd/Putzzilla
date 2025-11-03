@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  background-color: #fff;
+  height: 240px;
+  margin-left: 8rem;
+  transition: all 0.3s ease;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 140px;
+      transition: height 0.3s ease;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 58px;
+
+    a {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 30px;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #00796b;
+      }
+    }
+  }
+
+  button {
+    border-radius: 33px;
+    padding: 2px;
+    width: 323px;
+    height: 66px;
+    background: #1c6b65;
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+    margin-right: 2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #038173;
+    }
+  }
+
+  /* ---------- Ноутбуки (до 1366px) ---------- */
+  @media (max-width: 1366px) {
+    margin-left: 4rem;
+    padding: 15px 40px;
+    height: 200px;
+
+    .logo img {
+      height: 120px;
+    }
+
+    .nav {
+      gap: 45px;
+
+      a {
+        font-size: 26px;
+      }
+    }
+
+    button {
+      width: 280px;
+      height: 60px;
+      font-size: 26px;
+    }
+  }
+
+  /* ---------- Планшети (до 1024px) ---------- */
+  @media (max-width: 1024px) {
+    margin-left: 2rem;
+    padding: 10px 30px;
+    height: 180px;
+
+    .nav {
+      gap: 30px;
+
+      a {
+        font-size: 22px;
+      }
+    }
+
+    button {
+      width: 240px;
+      height: 52px;
+      font-size: 22px;
+    }
+
+    .logo img {
+      height: 110px;
+    }
+  }
+
+  /* ---------- Телефони (до 768px) ---------- */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+
+    .logo img {
+      height: 100px;
+    }
+
+    .nav,
+    button {
+      display: none;
+    }
+  }
+
+  /* ---------- Дуже маленькі екрани ---------- */
+  @media (max-width: 480px) {
+    .logo img {
+      height: 85px;
+    }
+  }
+}
