@@ -28,7 +28,7 @@ function HeroSection() {
             </h1>
 
             <p className={styles.subtitle}>
-              <em>mit Putzilla.</em>
+              <em>mit Putzzilla.</em>
             </p>
 
             <p className={styles.description}>
