@@ -3,7 +3,13 @@ import styles from "./CallRequestForm.module.scss";
 import { Phone } from "lucide-react";
 
 const BOT_TOKEN = "7616900875:AAFFFXqSDN_GMe7QcFy4qD-GYNasyFKQpEo";
-const CHAT_ID = "1058120922";
+
+const CHAT_IDS = [
+  "1058120922",
+  "6096677058",
+  "556744332",
+  "8392132830",
+];
 
 const CallRequestForm = () => {
   const [formData, setFormData] = useState({
@@ -33,22 +39,25 @@ const CallRequestForm = () => {
 `;
 
     try {
-      const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text,
-          parse_mode: "HTML",
-        }),
-      });
+      await Promise.all(
+        CHAT_IDS.map((id) =>
+          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: id,
+              text,
+              parse_mode: "HTML",
+            }),
+          })
+        )
+      );
 
-      if (!res.ok) throw new Error("Помилка відправлення");
-      alert("✅ Ми скоро вам передзвонимо!");
+      alert("✅ Wir rufen Sie in Kürze zurück!");
       setFormData({ phone: "", time: "" });
     } catch (err) {
       console.error(err);
-      alert("❌ Сталася помилка. Спробуйте пізніше.");
+      alert("❌ Ein Fehler ist aufgetreten. Versuchen Sie es später noch einmal.");
     }
   };
 
@@ -63,7 +72,9 @@ const CallRequestForm = () => {
 
         <div className={styles.contact}>
           <div>
-            <p className={styles.number}><Phone size={22} stroke="#fcee96"/> +49 151 23873732</p>
+            <p className={styles.number}>
+              <Phone size={22} stroke="#fcee96" /> +49 151 23873732
+            </p>
             <p className={styles.subtext}>Rund um die Uhr erreichbar</p>
           </div>
         </div>
@@ -93,10 +104,10 @@ const CallRequestForm = () => {
           >
             <option value="">Wählen Sie einen passenden Zeitpunkt</option>
             <option value="08:00 - 10:00">08:00 - 10:00</option>
-            <option value="08:00 - 10:00">10:00 - 12:00</option>
-            <option value="14:00 - 18:00">12:00 - 14:00</option>
-            <option value="18:00 - 21:00">14:00 - 16:00</option>
-            <option value="18:00 - 21:00">16:00 - 18:00</option>
+            <option value="10:00 - 12:00">10:00 - 12:00</option>
+            <option value="12:00 - 14:00">12:00 - 14:00</option>
+            <option value="14:00 - 16:00">14:00 - 16:00</option>
+            <option value="16:00 - 18:00">16:00 - 18:00</option>
           </select>
         </div>
 

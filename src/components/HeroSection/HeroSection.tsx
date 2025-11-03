@@ -34,8 +34,8 @@ function HeroSection() {
             </p>
 
             <div className={styles.buttons}>
-              <a href="tel:+491604580712" className={styles.callBtn}>
-                + 49 160 4580712
+              <a href="tel:+4915123873732" className={styles.callBtn}>
+                +49 151 23873732
               </a>
 
               <button

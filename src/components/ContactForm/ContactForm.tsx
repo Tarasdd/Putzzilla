@@ -3,7 +3,13 @@ import styles from "./ContactForm.module.scss";
 import circle from "../../assets/circle.svg";
 
 const BOT_TOKEN = "7616900875:AAFFFXqSDN_GMe7QcFy4qD-GYNasyFKQpEo";
-const CHAT_ID = "1058120922";
+
+const CHAT_IDS = [
+  "1058120922",
+  "6096677058",
+  "556744332",
+  "8392132830",
+];
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -53,24 +59,23 @@ const ContactForm = () => {
 `;
 
     try {
-      const response = await fetch(
-        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text,
-            parse_mode: "HTML",
-          }),
-        }
+      const results = await Promise.all(
+        CHAT_IDS.map((id) =>
+          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: id,
+              text,
+              parse_mode: "HTML",
+            }),
+          })
+        )
       );
 
-      if (!response.ok) throw new Error("Error sending message");
+      if (results.some((r) => !r.ok)) throw new Error("Error sending messages");
 
-      alert(
-        "✅ Nachricht erfolgreich gesendet! Wir werden Sie in Kürze anrufen."
-      );
+      alert("✅ Nachricht erfolgreich gesendet! Wir werden Sie in Kürze anrufen.");
 
       setFormData({
         date: "",
@@ -177,7 +182,7 @@ const ContactForm = () => {
         </div>
       </div>
 
-      <label className={styles.checkbox} style={{ fontWeight: 'bold' }}>
+      <label className={styles.checkbox} style={{ fontWeight: "bold" }}>
         <input
           type="checkbox"
           name="vip"
@@ -195,10 +200,7 @@ const ContactForm = () => {
           onChange={handleChange}
           required
         />
-        <span
-          className={styles.privacyText}
-          onClick={handlePrivacyClick}
-        >
+        <span className={styles.privacyText} onClick={handlePrivacyClick}>
           Ich habe die Datenschutzerklärung gelesen und akzeptiert
         </span>
       </label>
