@@ -6,14 +6,16 @@ import karcherK7 from "../../assets/KarcherK7.png"
 import boschVac15 from "../../assets/BoschVac15.png"
 import karcherBR40 from "../../assets/KarcherBR.png"
 import boschFontus from "../../assets/BoschFontus18V.png"
+import SantoemmaSabrina from "../../assets/SantoemmaSabrina.png"
+import DriEaz from "../../assets/Dri‑Eaz.png"
 
 const devices = [
   { img: karcherK7, name: "Karcher K 7", desc: "Hochdruckreiniger" },
   { img: boschVac15, name: "Bosch Vac 15", desc: "Hochdruckreiniger" },
   { img: karcherBR40, name: "Karcher BR 40/10C", desc: "Handkehrmaschine" },
   { img: boschFontus, name: "Bosch Fontus 18V", desc: "Reinigungsgerät für Außenbereich" },
-  { img: boschFontus, name: "Bosch Fontus 18V", desc: "Reinigungsgerät für Außenbereich" },
-  { img: boschFontus, name: "Bosch Fontus 18V", desc: "Reinigungsgerät für Außenbereich" },
+  { img: SantoemmaSabrina, name: "Santoemma Sabrina", desc: "Sprühextraktionsgerät" },
+  { img: DriEaz, name: "Dri‑Eaz Dri‑Pod", desc: "Bodentrockner" },
 ]
 
 function DevicesSection() {

@@ -93,8 +93,10 @@ const CallRequestForm = () => {
           >
             <option value="">Wählen Sie einen passenden Zeitpunkt</option>
             <option value="08:00 - 10:00">08:00 - 10:00</option>
-            <option value="14:00 - 18:00">14:00 - 18:00</option>
-            <option value="18:00 - 21:00">18:00 - 21:00</option>
+            <option value="08:00 - 10:00">10:00 - 12:00</option>
+            <option value="14:00 - 18:00">12:00 - 14:00</option>
+            <option value="18:00 - 21:00">14:00 - 16:00</option>
+            <option value="18:00 - 21:00">16:00 - 18:00</option>
           </select>
         </div>
 
