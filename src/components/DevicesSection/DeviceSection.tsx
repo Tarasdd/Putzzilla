@@ -38,8 +38,8 @@ function DevicesSection() {
               320: { slidesPerView: 2.2, spaceBetween: 5 },
               480: { slidesPerView: 2.2, spaceBetween: 20 },
               768: { slidesPerView: 2.2, spaceBetween: 25 },
-              1024: { slidesPerView: 3, spaceBetween: 30 },
-              1280: { slidesPerView: 3, spaceBetween: 35 },
+              1024: { slidesPerView: 3.5, spaceBetween: 30 },
+              1280: { slidesPerView: 3.5, spaceBetween: 35 },
               1600: { slidesPerView: 3.6, spaceBetween: 40 },
             }}
           >
