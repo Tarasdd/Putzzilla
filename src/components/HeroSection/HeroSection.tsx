@@ -1,4 +1,3 @@
-import Container from "../UI/Container";
 import styles from "./HeroSection.module.scss";
 import checkMark from "../../assets/checkmark.svg";
 import circle from "../../assets/circle.svg";
@@ -17,7 +16,6 @@ function HeroSection() {
 
   return (
     <section id="about" className={styles.hero}>
-      <Container>
         <div className={styles.content}>
           {/* --- Left block --- */}
           <div className={styles.textBlock}>
@@ -68,7 +66,6 @@ function HeroSection() {
             </div>
           </div>
         </div>
-      </Container>
     </section>
   );
 }
