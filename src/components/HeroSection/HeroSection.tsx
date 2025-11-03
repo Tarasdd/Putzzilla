@@ -1,11 +1,10 @@
 import Container from "../UI/Container";
 import styles from "./HeroSection.module.scss";
-import checkMark from "../../assets/checkMark.svg";
+import checkMark from "../../assets/checkmark.svg";
 import circle from "../../assets/circle.svg";
 import person from "../../assets/personHeroSection.png";
 
 function HeroSection() {
-  // 🔹 Функція для плавного скролу
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -63,9 +62,8 @@ function HeroSection() {
               className={styles.person}
             />
             
-            {/* ✅ Перенесений бейдж сюди */}
             <div className={styles.badge}>
-              <img src={checkMark} alt="Checkmark" />
+              <img src={checkMark} alt="CheckMark" />
               <span>Zertifizierte Fachkraft</span>
             </div>
           </div>
