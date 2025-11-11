@@ -52,6 +52,12 @@
     font-size: 40px;
     line-height: 100%;
     margin-bottom: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      transition: all 0.1s;
+    }
   }
 
   a {
@@ -82,8 +88,16 @@
   opacity: 0.9;
 }
 
+.address:hover,
+.address:focus,
+.address:active,
+.address:visited {
+  color: #fcee96; 
+  opacity: 1; 
+}
+
 /* ========================= */
-/* 💻 1200px — ноутбуки */
+/* 💻 1200px */
 @media (max-width: 1200px) {
   .logoBlock .logo {
     width: 180px;

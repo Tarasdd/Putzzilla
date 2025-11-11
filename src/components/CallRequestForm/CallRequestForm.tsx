@@ -72,9 +72,9 @@ const CallRequestForm = () => {
 
         <div className={styles.contact}>
           <div>
-            <p className={styles.number}>
-              <Phone size={22} stroke="#fcee96" /> +49 151 23873732
-            </p>
+          <a href="tel:+4915123873732" className={styles.number}>
+            <Phone size={22} stroke="#fcee96" /> +49 151 23873732
+          </a>
             <p className={styles.subtext}>Rund um die Uhr erreichbar</p>
           </div>
         </div>
@@ -108,6 +108,8 @@ const CallRequestForm = () => {
             <option value="12:00 - 14:00">12:00 - 14:00</option>
             <option value="14:00 - 16:00">14:00 - 16:00</option>
             <option value="16:00 - 18:00">16:00 - 18:00</option>
+            <option value="16:00 - 18:00">18:00 - 20:00</option>
+            <option value="16:00 - 18:00">20:00 - 22:00</option>
           </select>
         </div>
 

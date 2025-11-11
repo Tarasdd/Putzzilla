@@ -61,7 +61,7 @@ function DevicesSection() {
           </Swiper>
         </div>
 
-        {/* Сітка для мобільних */}
+        {/* Frid for mobile */}
         <div className={styles.gridWrapper}>
           {devices.map((device, index) => (
             <div key={index} className={styles.item}>

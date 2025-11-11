@@ -7,8 +7,23 @@ import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ConvincedSection.module.scss";
 
-import vorherImg from "../../assets/Vorher.png";
-import nacherImg from "../../assets/Nacher.png";
+import vorherImg1 from "../../assets/BeforeAfrerCollection/Vorher.png";
+import nacherImg1 from "../../assets/BeforeAfrerCollection/Nacher.png";
+import vorherImg2 from "../../assets/BeforeAfrerCollection/Vorher2.jpg";
+import nacherImg2 from "../../assets/BeforeAfrerCollection/Nachher2.jpg";
+import vorherImg3 from "../../assets/BeforeAfrerCollection/Vorher3.jpg";
+import nacherImg3 from "../../assets/BeforeAfrerCollection/Nachher3.jpg";
+import vorherImg4 from "../../assets/BeforeAfrerCollection/Vorher4.jpg";
+import nacherImg4 from "../../assets/BeforeAfrerCollection/Nachher4.jpg";
+import vorherImg5 from "../../assets/BeforeAfrerCollection/Vorher5.jpg";
+import nacherImg5 from "../../assets/BeforeAfrerCollection/Nachher5.jpg";
+import vorherImg6 from "../../assets/BeforeAfrerCollection/Vorher6.jpg";
+import nacherImg6 from "../../assets/BeforeAfrerCollection/Nachher6.jpg";
+import vorherImg7 from "../../assets/BeforeAfrerCollection/Vorher7.jpg";
+import nacherImg7 from "../../assets/BeforeAfrerCollection/Nachher7.jpg";
+import vorherImg8 from "../../assets/BeforeAfrerCollection/Vorher8.jpg";
+import nacherImg8 from "../../assets/BeforeAfrerCollection/Nachher8.jpg";
+
 
 interface BeforeAfter {
   before: string;
@@ -17,21 +32,26 @@ interface BeforeAfter {
 
 const ConvincedSection = () => {
   const [slides, setSlides] = useState<BeforeAfter[]>([
-    { before: vorherImg, after: nacherImg },
-    { before: vorherImg, after: nacherImg },
-    { before: vorherImg, after: nacherImg },
+    { before: vorherImg1, after: nacherImg1 },
+    { before: vorherImg2, after: nacherImg2 },
+    { before: vorherImg3, after: nacherImg3 },
+    { before: vorherImg4, after: nacherImg4 },
+    { before: vorherImg5, after: nacherImg5 },
+    { before: vorherImg6, after: nacherImg6 },
+    { before: vorherImg7, after: nacherImg7 },
+    { before: vorherImg8, after: nacherImg8 },
   ]);
 
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<any>(null);
 
-  const loadMore = () => {
-    const newSlides = Array(2)
-      .fill(null)
-      .map(() => ({ before: vorherImg, after: nacherImg }));
-    setSlides((prev) => [...prev, ...newSlides]);
-  };
+  // const loadMore = () => {
+  //   const newSlides = Array(2)
+  //     .fill(null)
+  //     .map(() => ({ before: vorherImg, after: nacherImg }));
+  //   setSlides((prev) => [...prev, ...newSlides]);
+  // };
 
   // Коли інстанс Swiper та кнопки вже в DOM — підключаємо навігацію
   useEffect(() => {

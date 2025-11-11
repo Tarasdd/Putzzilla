@@ -71,7 +71,7 @@
 
   .device {
     background-color: #2a7d76;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -213,7 +213,7 @@
   }
 }
 
-/* 📲 768px ↓ — показуємо сітку */
+/* 768px ↓ —  grid */
 @media (max-width: 768px) {
   .sliderWrapper {
     display: none;
@@ -255,6 +255,7 @@
 /* 📱 480px ↓ */
 @media (max-width: 480px) {
   .gridWrapper {
+    margin: 0 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
 
