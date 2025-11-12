@@ -1,5 +1,6 @@
 import AppointmentSection from "../../components/AppointmentSection/AppointmentSection";
 import CallRequestForm from "../../components/CallRequestForm/CallRequestForm";
+import ClientsSection from "../../components/ClientsSection/ClientsSection";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ConvincedSection from "../../components/ConvincedSection/ConvincedSection";
 import DevicesSection from "../../components/DevicesSection/DeviceSection";
@@ -22,6 +23,7 @@ function MainPage() {
       <ContactForm />
       <VIPSection />
       <VipBenefits />
+      <ClientsSection />
       <CallRequestForm />
       <ConvincedSection />
       <Footer />

@@ -135,7 +135,7 @@
 
 .subtitle {
   font-style: italic;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 60px;
   line-height: 133%;
   margin-bottom: 1rem;
@@ -203,6 +203,15 @@
 
     &:hover {
       background-color: #038173;
+    }
+
+    @media (max-width: 1200px) {
+      .buttons {
+        
+        .callBtn {
+          
+        }
+      }
     }
 
     @media (max-width: 992px) {
