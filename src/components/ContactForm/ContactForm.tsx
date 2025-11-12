@@ -1,5 +1,8 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.scss";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { Calendar } from "lucide-react";
 import circle from "../../assets/circle.svg";
 
 const BOT_TOKEN = "7616900875:AAFFFXqSDN_GMe7QcFy4qD-GYNasyFKQpEo";
@@ -12,6 +15,8 @@ const CHAT_IDS = [
 ];
 
 const ContactForm = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -106,16 +111,61 @@ const ContactForm = () => {
 
       <div className={styles.row}>
         <div className={styles.field}>
-          <label htmlFor="date">Datum</label>
-          <input
+        <label htmlFor="date">Datum</label>
+        <div className={styles.dateWrapper}>
+          <DatePicker
             id="date"
-            type="text"
-            name="date"
-            placeholder="Datum"
-            value={formData.date}
-            onChange={handleChange}
+            selected={selectedDate}
+            onChange={(date: Date | null) => {
+              setSelectedDate(date);
+              if (date) {
+                const formatted = date.toLocaleDateString("de-DE", {
+                  day: "2-digit",
+                  month: "2-digit",
+                });
+                setFormData({ ...formData, date: formatted });
+              }
+            }}
+            dateFormat="dd.MM"
+            placeholderText="Datum"
+            customInput={
+              <input
+                type="text"
+                value={formData.date}
+                name="date"
+                placeholder="Datum"
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
+              />
+            }
+            showPopperArrow={false}
+            showMonthDropdown
+            showYearDropdown={false}
+            renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "0 8px",
+                  alignItems: "center",
+                }}
+              >
+                <button onClick={decreaseMonth} type="button">
+                  {"<"}
+                </button>
+                <span>
+                  {date.toLocaleString("de-DE", { month: "long" })}
+                </span>
+                <button onClick={increaseMonth} type="button">
+                  {">"}
+                </button>
+              </div>
+            )}
           />
+          <Calendar className={styles.calendarIcon} />
         </div>
+      </div>
 
         <div className={styles.field}>
           <label htmlFor="time">Uhrzeit (optional)</label>
