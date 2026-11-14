@@ -3,16 +3,7 @@ import styles from "./ContactForm.module.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Calendar } from "lucide-react";
-import circle from "../../assets/circle.svg";
-
-const BOT_TOKEN = "7616900875:AAFFFXqSDN_GMe7QcFy4qD-GYNasyFKQpEo";
-
-const CHAT_IDS = [
-  "1058120922",
-  "6096677058",
-  "556744332",
-  "8392132830",
-];
+import { sendRequest } from "../../services/sendRequest";
 
 const ContactForm = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -50,35 +41,8 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `
-📅 <b>Нова заявка на прибирання</b>
-━━━━━━━━━━━━━━━━━━
-🗓 <b>Дата:</b> ${formData.date || "-"}
-⏰ <b>Час:</b> ${formData.time || "-"}
-👤 <b>Ім’я / Адреса:</b> ${formData.name}
-📞 <b>Телефон:</b> ${formData.phone}
-📧 <b>Email:</b> ${formData.email}
-💎 <b>VIP-Service:</b> ${formData.vip ? "Так ✅" : "Ні ❌"}
-📝 <b>Повідомлення:</b> ${formData.message || "-"}
-✅ <b>Політика:</b> ${formData.privacy ? "Так" : "Ні"}
-`;
-
     try {
-      const results = await Promise.all(
-        CHAT_IDS.map((id) =>
-          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: id,
-              text,
-              parse_mode: "HTML",
-            }),
-          })
-        )
-      );
-
-      if (results.some((r) => !r.ok)) throw new Error("Error sending messages");
+      await sendRequest({ type: "appointment", ...formData });
 
       alert("✅ Nachricht erfolgreich gesendet! Wir werden Sie in Kürze anrufen.");
 

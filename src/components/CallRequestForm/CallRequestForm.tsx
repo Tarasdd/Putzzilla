@@ -1,15 +1,7 @@
 import { useState } from "react";
 import styles from "./CallRequestForm.module.scss";
 import { Phone } from "lucide-react";
-
-const BOT_TOKEN = "7616900875:AAFFFXqSDN_GMe7QcFy4qD-GYNasyFKQpEo";
-
-const CHAT_IDS = [
-  "1058120922",
-  "6096677058",
-  "556744332",
-  "8392132830",
-];
+import { sendRequest } from "../../services/sendRequest";
 
 const CallRequestForm = () => {
   const [formData, setFormData] = useState({
@@ -31,27 +23,8 @@ const CallRequestForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `
-📞 <b>Нова заявка: передзвонити клієнту</b>
-━━━━━━━━━━━━━━━━━━
-📱 <b>Телефон:</b> ${formData.phone}
-🕒 <b>Зручний час:</b> ${formData.time || "-"}
-`;
-
     try {
-      await Promise.all(
-        CHAT_IDS.map((id) =>
-          fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: id,
-              text,
-              parse_mode: "HTML",
-            }),
-          })
-        )
-      );
+      await sendRequest({ type: "callback", ...formData });
 
       alert("✅ Wir rufen Sie in Kürze zurück!");
       setFormData({ phone: "", time: "" });
@@ -108,8 +81,8 @@ const CallRequestForm = () => {
             <option value="12:00 - 14:00">12:00 - 14:00</option>
             <option value="14:00 - 16:00">14:00 - 16:00</option>
             <option value="16:00 - 18:00">16:00 - 18:00</option>
-            <option value="16:00 - 18:00">18:00 - 20:00</option>
-            <option value="16:00 - 18:00">20:00 - 22:00</option>
+            <option value="18:00 - 20:00">18:00 - 20:00</option>
+            <option value="20:00 - 22:00">20:00 - 22:00</option>
           </select>
         </div>
 
