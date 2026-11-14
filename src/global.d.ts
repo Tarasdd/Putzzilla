@@ -12,3 +12,8 @@ declare module '*.jpg';
 declare module '*.jpeg';
 declare module '*.gif';
 declare module '*.svg';
+
+// Google Tag Manager
+interface Window {
+  dataLayer: unknown[];
+}

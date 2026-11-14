@@ -26,6 +26,10 @@ const CallRequestForm = () => {
     try {
       await sendRequest({ type: "callback", ...formData });
 
+      // Google Ads: учёт заявки через GTM (только при успешной отправке)
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "submit_lead_form" });
+
       alert("✅ Wir rufen Sie in Kürze zurück!");
       setFormData({ phone: "", time: "" });
     } catch (err) {

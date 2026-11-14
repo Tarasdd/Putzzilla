@@ -44,6 +44,10 @@ const ContactForm = () => {
     try {
       await sendRequest({ type: "appointment", ...formData });
 
+      // Google Ads: учёт заявки через GTM (только при успешной отправке)
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "submit_lead_form" });
+
       alert("✅ Nachricht erfolgreich gesendet! Wir werden Sie in Kürze anrufen.");
 
       setFormData({
