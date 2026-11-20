@@ -17,3 +17,10 @@ declare module '*.svg';
 interface Window {
   dataLayer: unknown[];
 }
+
+// Google Consent Mode / GTM loader (объявлены в index.html)
+interface Window {
+  gtag?: (...args: unknown[]) => void;
+  loadGTM?: () => void;
+  __gtmLoaded?: boolean;
+}

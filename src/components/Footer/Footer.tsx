@@ -3,6 +3,7 @@ import { Mail, Phone } from "lucide-react";
 import telegramIcon from "../../assets/icons/telegram.svg";
 import whatsAppIcon from "../../assets/icons/whatsapp.svg";
 import logo from "../../assets/logo.png";
+import { openCookieSettings } from "../../services/cookieSettings";
 
 const Footer = () => {
   const handlePrivacyClick = (e: React.MouseEvent<HTMLSpanElement>) => {
@@ -83,6 +84,14 @@ const Footer = () => {
       >
           Schillerstr 56, 86161 Augsburg
       </a>
+
+      <button
+        type="button"
+        className={styles.cookieSettings}
+        onClick={openCookieSettings}
+      >
+        Cookie-Einstellungen
+      </button>
     </footer>
   );
 };

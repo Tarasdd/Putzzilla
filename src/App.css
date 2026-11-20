@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Шрифт Inter подключается локально (@fontsource-variable/inter в main.tsx),
+   без запросов к Google Fonts. */
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Variable", "Inter", sans-serif;
 }
 
 a {

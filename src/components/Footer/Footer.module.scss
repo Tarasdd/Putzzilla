@@ -92,8 +92,27 @@
 .address:focus,
 .address:active,
 .address:visited {
-  color: #fcee96; 
-  opacity: 1; 
+  color: #fcee96;
+  opacity: 1;
+}
+
+.cookieSettings {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 16px;
+  color: #fcee96;
+  opacity: 0.8;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
 }
 
 /* ========================= */
